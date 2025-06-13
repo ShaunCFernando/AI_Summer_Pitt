@@ -1,0 +1,71 @@
+Introduction and Problem Statement: 
+Total Knee Arthroplasty (TKA) is a surgical procedure that replaces a damaged knee joint with a 
+prosthetic implant. Precise implant placement is critical to ensure joint function, reduce 
+complications, and optimize patient mobility after surgery. Artificial intelligence (AI) methods 
+can assist in both pre-surgical planning and postoperative care by automatically analyzing 
+radiographs. 
+In this team project, you will develop an AI localization system using YOLOv9 to automatically 
+localize and classify the knee joint area on synthetic knee radiographs - both with and without 
+TKA implants. This system aims to support clinicians by improving the precision and efficiency 
+of TKA procedures. 
+The goal is not just to build a model - but to experience the entire medical AI pipeline: data 
+understanding, annotation, model training, evaluation, and communication. 
+Good luck and have fun! 
+Team Creation: 
+In-Class: You will form groups of 2-3 students. 
+Remote: You will be assigned to breakout groups of 2-3 students. 
+Project Tasks 
+Task 1: Dataset Exploration 
+• Download the dataset from the GitHub repository. 
+• Visualize random samples. 
+• Verify image resolution and quality. 
+• Identify whether implants are present. 
+• Discuss any challenges that might affect annotation consistency. 
+Task 2: Inter-rater Agreement 
+• Download the AISummerSchool_2025_TeamProject-Interrater-Agreement-Set containing 
+15 images.  
+• Each team member will independently annotate these images using Roboflow. When 
+completed export your annotations using the PascalVOC format 
+• Follow the provided annotation guidelines using LabelImg with the following two 
+classes: 
+o KneeAP: Native knee joint (no implant) 
+o TkaKneeAP: Knee joint with TKA prosthesis 
+• Draw bounding boxes that tightly enclose the entire knee joint (including implant if 
+present) following the annotation guidelines presented during the hands-on session 
+• After annotating: 
+o Calculate the inter-rater agreement. Only one team member should do this, with 
+each member should share their annotations with this member.  Code to do this is 
+provided in the project starter code notebook.  - - - - 
+Calculate pairwise Intersection over Union (IoU) between team members’ 
+bounding boxes. 
+Compute the average inter-rater IoU for the group. 
+Review and discuss any low agreement cases to improve annotation consistency. 
+Reannotate if necessary. Aim for an IoU of 0.8 or greater.  
+• Provide the average inter-rater IoU and a few examples in your presentation.  
+• For this step, use the CPU on Google Colab not the GPU. Google Colab only 
+provides you with a GPU for a limited amount of time, and the time is used even 
+when the GPU isn't being used.  
+Task 3: Dataset Preparation 
+• Have one team member create a new project on Roboflow to contain the 
+AISummerSchool_2025_TeamProjectDataset and add the other team members as 
+Labelers 
+• Follow the provided annotation guidelines using LabelImg with the following two 
+classes: - 
+KneeAP: Native knee joint (no implant) - 
+TkaKneeAP: Knee joint with TKA prosthesis 
+• Draw bounding boxes that tightly enclose the entire knee joint (including implant if 
+present) following the annotation guidelines presented during the hands-on session. 
+Task 4: Dataset Conversion 
+• Export annotations into YOLOv9 format. 
+• Use the configuration demonstrated during the hands-on session. 
+Task 5: Model Training and Validation 
+• Enable the GPU for Google Colab 
+• Upload your final dataset to Google Colab for model training. 
+• Train a YOLOv9 detection model using your annotated dataset. 
+• Experiment with different: - 
+Learning rates - 
+Numbers of training epochs. 
+• Choose the best performing model from your experiments 
+Task 6: Model Evaluation 
+• Ee. 
+• Provide two examples displaying the predicted bounding box and their confidence score 
